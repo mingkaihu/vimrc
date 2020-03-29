@@ -14,6 +14,16 @@ call pathogen#infect(s:vim_runtime.'/sources_non_forked/{}')
 call pathogen#infect(s:vim_runtime.'/my_plugins/{}')
 call pathogen#helptags()
 
+""""""""""""""""""""""""""""""
+" => gutentags-settings
+""""""""""""""""""""""""""""""
+let g:gutentags_modules = ['ctags', 'gtags_cscope']
+" generate datebases in my cache directory, prevent gtags files polluting my project
+let g:gutentags_cache_dir = expand('~/.cache/tags')
+" config project root markers.
+let g:gutentags_project_root = ['.root']
+" forbid gutentags adding gtags databases
+let g:gutentags_auto_add_gtags_cscope = 0
 
 """"""""""""""""""""""""""""""
 " => bufExplorer plugin
